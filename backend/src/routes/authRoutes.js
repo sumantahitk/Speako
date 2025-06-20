@@ -11,7 +11,7 @@ router.post("/Logout",logout);//Logout is a POST because it changes authenticati
 
 router.post("/onboarding",protectRoute,onboard);
 //check if user logged in or not
-router.get("/me",protectRoute,(res,req)=>{
-    res.statusCode(200).json({success:true,user:req.user});
+router.get("/me",protectRoute,(req,res)=>{
+   return res.status(200).json({success:true,user:req.user});
 })
 export default router;

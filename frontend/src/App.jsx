@@ -24,14 +24,17 @@ if(isLoading) return <PageLoader/>
     <div className="h-screen" data-theme="night">
   
    <Routes>
-    <Route path="/" element={isAuthenticated && isOnboarded ?(<HomePage/>):(<Navigate to={!isAuthenticated?"/login":"/onboarding"}/>)}/>
+  <Route path="/" element={isAuthenticated && isOnboarded ?(<HomePage/>):(<Navigate to={!isAuthenticated?"/login":"/onboarding"}/>)}/>
     <Route 
     path="/signup" 
     element={!isAuthenticated ?<SignupPage/>:<Navigate to={isOnboarded?"/":"/onboarding"}/>}
     />
-    <Route path="/login" 
-    element={isAuthenticated ?<LoginPage/>:<Navigate to={isOnboarded?"/":"/onboarding"}/>}
-    />
+    <Route
+          path="/login"
+          element={
+            !isAuthenticated ? <LoginPage /> : <Navigate to={isOnboarded ? "/" : "/onboarding"} />
+          }
+        />
     <Route path="/notifications" element={isAuthenticated ?<NotificationPage/>:<Navigate to="/login"/>}/>
  
     <Route path="/chat" element={isAuthenticated ?<ChatPage/>:<Navigate to="/login"/>}/>
@@ -43,9 +46,8 @@ if(isLoading) return <PageLoader/>
      (!isOnboarded?
         (<OnboardingPage/>)
         :(<Navigate to="/" />))
-     :(<Navigate to="/login"/>)}/>
-
-
+     :(<Navigate to="/login"/>)}
+     />
    </Routes>
    <Toaster/>
     </div>
