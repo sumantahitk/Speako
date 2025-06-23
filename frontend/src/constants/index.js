@@ -187,11 +187,11 @@ export const LANGUAGES = [
 
 export const LANGUAGE_TO_FLAG = {
     
-  Bengali:"bg",
-  Hindi:"hi",
-  Bhojpuri:"bj",
-  Telegu:"tg",
-  Marathi:"mt",
+  Bengali:"in",
+  Hindi:"in",
+  Bhojpuri:"in",
+  Telegu:"in",
+  Marathi:"in",
   english: "gb",
   spanish: "es",
   french: "fr",
