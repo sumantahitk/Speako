@@ -1,2 +1,7 @@
 TanStck Query
 Daisy Ui
+
+
+npm i stream-chat stream-chat-react
+
+npm i @stream-io/video-react-sdk
