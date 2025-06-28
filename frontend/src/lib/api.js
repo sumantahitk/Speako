@@ -33,6 +33,18 @@ export const completeOnboarding =async(userData)=>{
     return response.data;
 }
 
+
+// export const completeOnboarding = async (userData) => {
+//   const isFormData = userData instanceof FormData;
+
+//   const response = await axiosInstance.post("/auth/onboarding", userData, {
+//     headers: isFormData ? { "Content-Type": "multipart/form-data" } : {},
+//   });
+
+//   return response.data;
+// };
+
+
 export async function getUserFriends(){
     const response = await axiosInstance.get("/users/friends");
     return response.data;

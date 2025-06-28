@@ -6,12 +6,13 @@ import toast from 'react-hot-toast';
 import { completeOnboarding } from '../lib/api';
 import { CameraIcon, LoaderIcon, MapPinIcon, ShipWheelIcon, ShuffleIcon } from 'lucide-react';
 import { LANGUAGES } from '../constants';
+import { useNavigate } from 'react-router';
 
 const OnboardingPage = () => {
 
     const {authUser} =useAuthUser();
     const queryClient=useQueryClient();
-
+  const navigate=useNavigate();
     const [formState, setFormState] = useState({
     fullName: authUser?.fullName || "",
     bio: authUser?.bio || "",
@@ -23,9 +24,16 @@ const OnboardingPage = () => {
 
     const {mutate:onboardingMutation,isPending}=useMutation({
       mutationFn:completeOnboarding,
-      onSuccess:()=>{
+
+      onSuccess: async()=>{
         toast.success("Profile updated successfully");
-        queryClient.invalidateQueries({queryKey:['authUser']});
+     
+       await queryClient.invalidateQueries({queryKey:['authUser']});
+          // Add small delay to ensure state is synced
+    setTimeout(() => {
+      navigate("/");
+    }, 100); // or use a promise-based delay
+         
       },
       onError:(error)=>
         {
@@ -73,7 +81,7 @@ const OnboardingPage = () => {
 
               {/* Generate Random Avatar BTN */}
               <div className="flex items-center gap-2">
-                <button type="button" onClick={handleRandomAvatar} className="btn border-t-green-900 bg-green-900 hover:bg-green-700">
+                <button type="button" onClick={handleRandomAvatar} className="btn border-t-green-900 bg-green-600 hover:bg-green-500">
                   <ShuffleIcon className="size-4 mr-2" />
                   Generate Random Avatar
                 </button>
@@ -169,7 +177,7 @@ const OnboardingPage = () => {
               </div>
             </div>
             {/* SUBMIT BUTTON */}
-                <button className="btn border-t-green-900 bg-green-900 hover:bg-green-700 w-full" disabled={isPending} type="submit">
+                <button className="btn border-t-green-900 bg-green-600 hover:bg-green-500 w-full" disabled={isPending} type="submit">
               {!isPending ? (
                 <>
                   <ShipWheelIcon className="size-5 mr-2" />
