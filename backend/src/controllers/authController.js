@@ -81,7 +81,7 @@ export async function login(req, res) {
     const isPasswordCorrect = await user.matchPassword(password);
     if (!isPasswordCorrect) return res.status(401).json({ message: "Invalid email or password" });
 
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET_KEY, {
+    const token = jwt.sign({ userId: user?._id }, process.env.JWT_SECRET_KEY, {
       expiresIn: "7d",
     });
 
@@ -89,6 +89,7 @@ export async function login(req, res) {
       maxAge: 7 * 24 * 60 * 60 * 1000,
       httpOnly: true, // prevent XSS attacks,
       sameSite: "strict", // prevent CSRF attacks
+      // sameSite: "lax", 
       secure: process.env.NODE_ENV === "production",
     });
 
