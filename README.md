@@ -31,9 +31,7 @@ At its core, Speako uses WebRTC (Web Real-Time Communication) to enable direct, 
 
 - **Other Tools**:
   - Axios  
-  - JSON Web Tokens (JWT)  
-  - Socket.IO  
-  - WebRTC  
+  - JSON Web Tokens (JWT)   
   - [Stream API](https://getstream.io/)
 
 ---
