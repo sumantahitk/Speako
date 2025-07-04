@@ -1,6 +1,8 @@
 # 🗣️ Speako
 
-**Speako** is a full-stack web application designed to help users improve their speaking and communication skills through real-time chat, video calling, and a modern user interface.
+**Speako** is a real-time communication platform built to help users improve their speaking skills through live video interactions. It offers secure authentication, a modern user interface, and seamless peer-to-peer video calling functionality.
+
+At its core, Speako uses WebRTC (Web Real-Time Communication) to enable direct, high-quality video calls between users—without the need for external plugins or streaming servers. The frontend is built with React.js and styled using Tailwind CSS, while the backend leverages Node.js, Express, and MongoDB for managing users, sessions, and authentication.
 
 🌐 **Live Demo**: [https://speako-m37o.onrender.com](https://speako-m37o.onrender.com)
 
