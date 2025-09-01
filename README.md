@@ -18,8 +18,7 @@ Speako is ideal for those looking to practice a new language, improve verbal flu
 ## Features
 
 - **User Authentication**: Secure sign-up and login with JWT-based auth.
-- **Real-Time Chat**: Chat live using Socket.IO integration.
-- **Video Calling**: Peer-to-peer video calling with WebRTC.
+- **Real-Time Chat Videp Call**: Chat live using GetStream.IO integration.
 - **Interactive UI**: Responsive and user-friendly interface.
 - **Cross-Device Support**: Optimized for desktop, tablet, and mobile.
 
@@ -84,6 +83,3 @@ Speako is ideal for those looking to practice a new language, improve verbal flu
      npm run dev
      ```
 
-## Contact
-
-For any inquiries or feedback, please reach out to [Sumanta](https://github.com/sumantahitk).
