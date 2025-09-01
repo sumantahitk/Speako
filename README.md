@@ -4,8 +4,7 @@
 
 **Speako** is a real-time communication platform built to help users enhance their speaking and conversational skills. Designed with both learners and professionals in mind, it combines chat and video features to enable natural, meaningful interactions.
 
-The platform uses **GetStream.io** to provide scalable, real-time chat with features like typing indicators, message history, and user presence. For direct and personal interaction, **WebRTC** powers high-quality video calls between connected users.
-
+The platform uses **GetStream.io** to provide scalable, real-time chat with features like typing indicators, message history, and user presence. 
 One of Speako’s standout features is its **connection system**. When a new user joins, they're shown a list of **suggested users** they can connect with. Users can send **connection requests**, and when another user accepts the request, both become **friends**. Only then can they start chatting or calling each other. This ensures communication is based on mutual consent and safety.
 
 The frontend is built with **React.js** and styled using **Tailwind CSS**, ensuring a modern and responsive design. The backend is powered by **Node.js**, **Express.js**, and **MongoDB**, with **JWT-based authentication** to keep user sessions secure.
